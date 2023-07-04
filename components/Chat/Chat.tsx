@@ -378,12 +378,12 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
             <div>
               {t("If you don't have an Skailar API key, you can get one here: ")}
               <a
-                href="https://discord.gg/USnfakDGr4"
+                href="https://discord.gg/skailar"
                 target="_blank"
                 rel="noreferrer"
                 className="text-blue-500 hover:underline"
               >
-                discord.gg/USnfakDGr4
+                discord.gg/skailar
               </a>
             </div>
           </div>
