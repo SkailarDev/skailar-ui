@@ -30,7 +30,6 @@ import { ChatInput } from './ChatInput';
 import { ChatLoader } from './ChatLoader';
 import { ErrorMessageDiv } from './ErrorMessageDiv';
 import { ModelSelect } from './ModelSelect';
-import { WebAccess } from './WebAccess';
 import { SystemPrompt } from './SystemPrompt';
 import { TemperatureSlider } from './Temperature';
 import { MemoizedChatMessage } from './MemoizedChatMessage';
@@ -413,8 +412,6 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                   {models.length > 0 && (
                     <div className="flex h-full flex-col space-y-2 rounded-lg border border-neutral-200 p-4 dark:border-neutral-600">
                       <ModelSelect />
-
-                      <WebAccess />
 
                       <SystemPrompt
                         conversation={selectedConversation}
