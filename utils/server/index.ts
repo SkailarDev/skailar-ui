@@ -34,6 +34,11 @@ export const OpenAIStream = async (
   if (OPENAI_API_TYPE === 'azure') {
     url = `${OPENAI_API_HOST}/openai/deployments/${AZURE_DEPLOYMENT_ID}/chat/completions?api-version=${OPENAI_API_VERSION}`;
   }
+  // if model contains -openai, set the variable usestreaming to false
+  let usestreaming = true;
+  if (model.id.includes('-openai')) {
+    usestreaming = false;
+  }
   const res = await fetch(url, {
     headers: {
       'Content-Type': 'application/json',
@@ -59,7 +64,7 @@ export const OpenAIStream = async (
       ],
       max_tokens: 1000,
       temperature: temperature,
-      stream: true,
+      stream: usestreaming,
     }),
   });
 
